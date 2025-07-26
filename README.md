@@ -13,13 +13,6 @@ docker compose up dev
 # Changes to your code will automatically reload!
 ```
 
-### Alternative Development Commands
-```bash
-# Build and run development container manually
-docker build --target development -t portfolio:dev .
-docker run -p 3000:3000 -v $(pwd):/app -v /app/node_modules portfolio:dev
-```
-
 ## 🏭 Production Workflow
 
 ### Local Production Testing
@@ -55,22 +48,6 @@ This project uses **multi-stage Docker builds** with three targets:
 - **Volume Protection** - Container's `node_modules` preserved during development
 - **Production Ready** - Optimized Nginx serving for production
 
-## 📝 Commands Reference
-
-```bash
-# Development
-docker compose up dev              # Start dev server
-docker compose down               # Stop all services
-
-# Production Testing  
-docker compose up prod            # Test production build locally
-
-# Direct Docker Commands
-docker build --target development -t portfolio:dev .    # Build dev image
-docker build --target production -t portfolio:prod .    # Build prod image
-docker build -t portfolio:latest .                      # Build prod (default)
-```
-
 ## 🛠 Technology Stack
 
 - **React 18** - UI framework
@@ -84,9 +61,9 @@ docker build -t portfolio:latest .                      # Build prod (default)
 
 ```
 website/
-├── src/                    # React source code
-├── Dockerfile             # Multi-stage Docker build
-├── docker-compose.yml     # Development/production services
+├── src/                  # React source code
+├── Dockerfile            # Multi-stage Docker build
+├── docker-compose.yml    # Development/production services
 ├── nginx.conf            # Nginx configuration
 ├── vite.config.js        # Vite configuration
 └── package.json          # Dependencies and scripts
