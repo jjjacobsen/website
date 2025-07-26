@@ -42,7 +42,7 @@ const Projects = () => {
   return (
     <section id="projects" className="projects">
       <motion.div
-        className="projects-content"
+        className="projects-content container"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
