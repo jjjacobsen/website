@@ -85,7 +85,11 @@ const Contact = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <a href="#" className="btn btn-primary">
+          <a
+            href="/jonah_jacobsen_resume.pdf"
+            download="jonah_jacobsen_resume.pdf"
+            className="btn btn-primary"
+          >
             Download Resume
           </a>
         </motion.div>
