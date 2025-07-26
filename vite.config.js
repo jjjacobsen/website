@@ -6,5 +6,9 @@ export default defineConfig({
     server: {
         host: true,
         port: 3000
+    },
+    define: {
+        // This helps with the CJS deprecation warning
+        global: 'globalThis',
     }
 }) 

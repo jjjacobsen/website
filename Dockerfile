@@ -15,8 +15,28 @@ COPY . .
 # Build the app
 RUN npm run build
 
+# Development stage
+FROM node:18-alpine AS development
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies (including devDependencies)
+RUN npm install
+
+# Copy source code
+COPY . .
+
+# Expose development port
+EXPOSE 3000
+
+# Start development server
+CMD ["npm", "run", "dev"]
+
 # Production stage
-FROM nginx:alpine
+FROM nginx:alpine AS production
 
 # Copy built app to nginx
 COPY --from=build /app/dist /usr/share/nginx/html
