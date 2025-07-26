@@ -4,7 +4,40 @@ A modern React portfolio website built with Vite, featuring both development and
 
 ## 🚀 Development Workflow
 
+### Prerequisites
+
+#### Pre-commit Hooks Setup
+
+This project uses pre-commit hooks to ensure code quality and consistency.
+
+**Installation:**
+
+```bash
+# Install pipx (if not already installed)
+brew install pipx
+
+# Install pre-commit
+pipx install pre-commit
+
+# Install the pre-commit hooks
+pre-commit install
+
+# (Optional) Run pre-commit on all files to test setup
+pre-commit run --all-files
+```
+
+The pre-commit hooks will automatically run on each commit and check for:
+
+- Code formatting (Prettier)
+- JavaScript/React linting (ESLint)
+- JSON/YAML validation
+- Dockerfile linting
+- Security issues (private keys)
+- File consistency (trailing whitespace, line endings)
+- Package vulnerabilities (npm audit)
+
 ### Quick Start (Recommended)
+
 ```bash
 # Start development server with hot reload
 docker compose up dev
@@ -16,6 +49,7 @@ docker compose up dev
 ## 🏭 Production Workflow
 
 ### Local Production Testing
+
 ```bash
 # Test production build locally
 docker compose up prod
@@ -23,6 +57,7 @@ docker compose up prod
 ```
 
 ### Production Deployment
+
 ```bash
 # Build production image (defaults to production target)
 docker build -t portfolio:latest .
