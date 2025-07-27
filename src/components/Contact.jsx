@@ -8,14 +8,14 @@ const Contact = () => {
     {
       icon: <FaGithub />,
       label: "GitHub",
-      value: "View my repositories",
-      href: "#",
+      value: "github.com/jjjacobsen",
+      href: "https://github.com/jjjacobsen",
     },
     {
       icon: <FaLinkedin />,
       label: "LinkedIn",
-      value: "Connect on LinkedIn",
-      href: "#",
+      value: "linkedin.com/in/jonahjacobsen",
+      href: "https://www.linkedin.com/in/jonahjacobsen/",
     },
     {
       icon: <FaEnvelope />,
@@ -96,7 +96,7 @@ const Contact = () => {
       </motion.div>
 
       <footer className="footer">
-        <p>© 2024 Your Name. Built with React & Love.</p>
+        <p>© 2024 Jonah Jacobsen. Built with React & Love.</p>
       </footer>
     </section>
   );

@@ -5,8 +5,16 @@ import "./Hero.css";
 
 const Hero = () => {
   const socialLinks = [
-    { icon: <FaGithub />, href: "#", label: "GitHub" },
-    { icon: <FaLinkedin />, href: "#", label: "LinkedIn" },
+    {
+      icon: <FaGithub />,
+      href: "https://github.com/jjjacobsen",
+      label: "GitHub",
+    },
+    {
+      icon: <FaLinkedin />,
+      href: "https://www.linkedin.com/in/jonahjacobsen/",
+      label: "LinkedIn",
+    },
     {
       icon: <FaEnvelope />,
       href: "mailto:jjacobsen115@gmail.com",
