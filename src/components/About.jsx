@@ -1,25 +1,18 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  FaReact,
-  FaNodeJs,
-  FaPython,
-  FaDocker,
-  FaGitAlt,
-  FaAws,
-} from "react-icons/fa";
-import { SiTypescript, SiPostgresql } from "react-icons/si";
+import { FaPython, FaDocker, FaAws, FaBrain, FaCogs } from "react-icons/fa";
+import { SiKubernetes, SiTerraform, SiDjango } from "react-icons/si";
 import "./About.css";
 
 const About = () => {
   const skills = [
-    { name: "React", icon: <FaReact /> },
-    { name: "Node.js", icon: <FaNodeJs /> },
-    { name: "TypeScript", icon: <SiTypescript /> },
+    { name: "AI/ML", icon: <FaBrain /> },
     { name: "Python", icon: <FaPython /> },
-    { name: "PostgreSQL", icon: <SiPostgresql /> },
+    { name: "CI/CD", icon: <FaCogs /> },
     { name: "Docker", icon: <FaDocker /> },
-    { name: "Git", icon: <FaGitAlt /> },
+    { name: "Kubernetes", icon: <SiKubernetes /> },
+    { name: "Terraform", icon: <SiTerraform /> },
+    { name: "Django", icon: <SiDjango /> },
     { name: "AWS", icon: <FaAws /> },
   ];
 
@@ -43,21 +36,20 @@ const About = () => {
             viewport={{ once: true }}
           >
             <p>
-              I'm a passionate full-stack developer with a love for creating
-              elegant solutions to complex problems. With expertise in modern
-              web technologies, I build scalable applications that deliver
-              exceptional user experiences.
+              I'm a Senior Software Engineer who loves building intelligent
+              systems that solve real problems. With over six years of
+              experience in AI, DevOps, and full-stack development, I create
+              automated solutions that make developers' lives easier.
             </p>
             <p>
-              My journey in tech started with curiosity about how things work,
-              and has evolved into a career focused on innovation and continuous
-              learning. I thrive in collaborative environments and enjoy
-              tackling challenges that push the boundaries of what's possible.
+              My tech journey took an unexpected turn during COVID when I became
+              a digital nomad for a year - working remotely while traveling the
+              country on my motorcycle.
             </p>
             <p>
-              When I'm not coding, you'll find me exploring new technologies,
-              contributing to open-source projects, or sharing knowledge with
-              the developer community.
+              Now settled in Nashville, you'll find me riding through Tennessee
+              hills, playing guitar, or diving deep into AI and automation
+              challenges that push the boundaries of what's possible.
             </p>
           </motion.div>
 

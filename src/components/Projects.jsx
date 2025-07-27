@@ -6,35 +6,27 @@ import "./Projects.css";
 const Projects = () => {
   const projects = [
     {
-      title: "Project One",
+      title: "Automated CI/CD Pipeline",
       description:
-        "A full-stack web application built with React and Node.js. Features real-time updates, user authentication, and responsive design.",
-      tech: ["React", "Node.js", "MongoDB", "Socket.io"],
-      github: "#",
-      live: "#",
+        "Architected and built a complete CI/CD pipeline from the ground up, reducing release cycles from 9-11 months to daily deployments and saving millions annually.",
+      tech: [
+        "Python",
+        "Docker",
+        "Bitbucket Pipelines",
+        "MongoDB",
+        "VMWare",
+        "Pytest",
+        "AWS",
+      ],
+      github: null,
+      live: null,
     },
     {
-      title: "Project Two",
+      title: "Machine Learning with Twilio",
       description:
-        "Mobile-first e-commerce platform with advanced filtering, payment integration, and inventory management system.",
-      tech: ["Next.js", "TypeScript", "PostgreSQL", "Stripe"],
-      github: "#",
-      live: "#",
-    },
-    {
-      title: "Project Three",
-      description:
-        "Machine learning powered data analytics dashboard for visualizing complex datasets and generating insights.",
-      tech: ["Python", "TensorFlow", "React", "D3.js"],
-      github: "#",
-      live: "#",
-    },
-    {
-      title: "Project Four",
-      description:
-        "Open-source CLI tool for automating development workflows and improving team productivity.",
-      tech: ["Go", "Docker", "GitHub Actions"],
-      github: "#",
+        "Developed a machine learning model to predict optimal email checking times, with a REST API for seamless integration by Twilio developers.",
+      tech: ["Python", "AWS", "scikit-learn", "Pandas"],
+      github: null,
       live: null,
     },
   ];
@@ -89,18 +81,6 @@ const Projects = () => {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          className="projects-cta"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <a href="#" className="btn btn-secondary">
-            View All Projects
-          </a>
-        </motion.div>
       </motion.div>
     </section>
   );

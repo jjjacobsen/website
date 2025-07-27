@@ -36,7 +36,7 @@ const Hero = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          Your Name
+          Jonah Jacobsen
         </motion.h1>
 
         <motion.p
@@ -45,7 +45,7 @@ const Hero = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Software Engineer • Full Stack Developer • Tech Enthusiast
+          Senior Software Engineer • AI/ML Specialist • DevOps Innovator
         </motion.p>
 
         <motion.p
@@ -54,8 +54,8 @@ const Hero = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          Building innovative solutions with modern technologies. Passionate
-          about creating exceptional user experiences.
+          Building the future with AI and automation. Love creating tools that
+          make developers' lives easier and businesses more efficient.
         </motion.p>
 
         <motion.div

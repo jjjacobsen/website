@@ -156,23 +156,6 @@
   left: 100%;
 }
 
-.projects-cta {
-  text-align: center;
-  margin-top: 4rem;
-}
-
-.projects-cta .btn {
-  font-size: 1.1rem;
-  padding: 1rem 2.5rem;
-  border-radius: 12px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.projects-cta .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 255, 136, 0.2);
-}
-
 @media (max-width: 1024px) {
   .projects-grid {
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));

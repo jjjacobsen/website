@@ -96,7 +96,7 @@ const Contact = () => {
       </motion.div>
 
       <footer className="footer">
-        <p>© 2024 Jonah Jacobsen. Built with React & Love.</p>
+        <p>© 2025 Jonah Jacobsen. Built with React</p>
       </footer>
     </section>
   );
