@@ -55,8 +55,7 @@
   background: linear-gradient(135deg, #3a86ff 0%, #00ff88 100%);
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  animation-delay: 10s;
+  animation: float-centered 20s infinite ease-in-out;
 }
 
 @keyframes float {
@@ -75,6 +74,25 @@
 
   75% {
     transform: translateY(-10px) scale(1.02);
+  }
+}
+
+@keyframes float-centered {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateY(0) scale(1);
+  }
+
+  25% {
+    transform: translate(-50%, -50%) translateY(-20px) scale(1.05);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) translateY(10px) scale(0.95);
+  }
+
+  75% {
+    transform: translate(-50%, -50%) translateY(-10px) scale(1.02);
   }
 }
 
