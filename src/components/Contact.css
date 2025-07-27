@@ -28,10 +28,16 @@
 
 .contact-methods {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   width: 100%;
   margin-bottom: 3rem;
+}
+
+.contact-method:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  width: calc(50% - 0.75rem);
+  margin: 0 auto;
 }
 
 .contact-method {
@@ -80,7 +86,12 @@
   font-weight: 500;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  word-break: break-word;
+}
+
+.contact-value.email {
+  overflow-wrap: anywhere;
+  word-break: normal;
+  hyphens: none;
 }
 
 .contact-cta {

@@ -1,15 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaEnvelope, FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 import "./Contact.css";
 
 const Contact = () => {
   const contactMethods = [
     {
-      icon: <FaEnvelope />,
-      label: "Email",
-      value: "jjacobsen115@gmail.com",
-      href: "mailto:jjacobsen115@gmail.com",
+      icon: <FaGithub />,
+      label: "GitHub",
+      value: "View my repositories",
+      href: "#",
     },
     {
       icon: <FaLinkedin />,
@@ -18,16 +18,10 @@ const Contact = () => {
       href: "#",
     },
     {
-      icon: <FaGithub />,
-      label: "GitHub",
-      value: "View my repositories",
-      href: "#",
-    },
-    {
-      icon: <FaTwitter />,
-      label: "Twitter",
-      value: "@yourhandle",
-      href: "#",
+      icon: <FaEnvelope />,
+      label: "Email",
+      value: "jjacobsen115@gmail.com",
+      href: "mailto:jjacobsen115@gmail.com",
     },
   ];
 
@@ -72,7 +66,13 @@ const Contact = () => {
               <span className="contact-icon">{method.icon}</span>
               <div className="contact-details">
                 <span className="contact-label">{method.label}</span>
-                <span className="contact-value">{method.value}</span>
+                <span
+                  className={`contact-value ${
+                    method.label.toLowerCase() === "email" ? "email" : ""
+                  }`}
+                >
+                  {method.value}
+                </span>
               </div>
             </motion.a>
           ))}
