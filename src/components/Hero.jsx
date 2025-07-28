@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import "./Hero.css";
@@ -55,7 +54,7 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           Building the future with AI and automation. Love creating tools that
-          make developers' lives easier and businesses more efficient.
+          make developers&apos; lives easier and businesses more efficient.
         </motion.p>
 
         <motion.div

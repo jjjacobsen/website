@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 import "./Contact.css";
@@ -34,7 +33,7 @@ const Contact = () => {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="section-title">Let's Connect</h2>
+        <h2 className="section-title">Let&apos;s Connect</h2>
 
         <motion.p
           className="contact-intro"
@@ -43,9 +42,9 @@ const Contact = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          I'm always interested in hearing about new opportunities and
+          I&apos;m always interested in hearing about new opportunities and
           interesting projects. Whether you have a question or just want to say
-          hi, I'll try my best to get back to you!
+          hi, I&apos;ll try my best to get back to you!
         </motion.p>
 
         <motion.div

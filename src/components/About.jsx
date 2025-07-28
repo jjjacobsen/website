@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { FaPython, FaDocker, FaAws, FaBrain, FaCogs } from "react-icons/fa";
 import { SiKubernetes, SiTerraform, SiDjango } from "react-icons/si";
@@ -36,10 +35,10 @@ const About = () => {
             viewport={{ once: true }}
           >
             <p>
-              I'm a Senior Software Engineer who loves building intelligent
+              I&apos;m a Senior Software Engineer who loves building intelligent
               systems that solve real problems. With over six years of
               experience in AI, DevOps, and full-stack development, I create
-              automated solutions that make developers' lives easier.
+              automated solutions that make developers&apos; lives easier.
             </p>
             <p>
               My tech journey took an unexpected turn during COVID when I became
@@ -47,9 +46,10 @@ const About = () => {
               country on my motorcycle.
             </p>
             <p>
-              Now settled in Nashville, you'll find me riding through Tennessee
-              hills, playing guitar, or diving deep into AI and automation
-              challenges that push the boundaries of what's possible.
+              Now settled in Nashville, you&apos;ll find me riding through
+              Tennessee hills, playing guitar, or diving deep into AI and
+              automation challenges that push the boundaries of what&apos;s
+              possible.
             </p>
           </motion.div>
 
