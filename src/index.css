@@ -11,10 +11,10 @@
   --text-primary: #ffffff;
   --text-secondary: #a0a0a0;
   --text-tertiary: #707070;
-  --accent-primary: #00ff88;
-  --accent-secondary: #00cc6a;
+  --accent-primary: #3b82f6;
+  --accent-secondary: #1d4ed8;
   --border-color: #2a2a2a;
-  --gradient-1: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+  --gradient-1: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
   --gradient-2: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
 }
 
