@@ -6,7 +6,12 @@
     "react-icons": "^4.12.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.32.0",
     "@vitejs/plugin-react": "^4.2.0",
+    "eslint": "^9.32.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
     "vite": "^5.0.0"
   },
   "name": "portfolio-spa",
@@ -14,6 +19,8 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
+    "lint": "eslint src --ext .js,.jsx",
+    "lint:fix": "eslint src --ext .js,.jsx --fix",
     "preview": "vite preview"
   },
   "type": "module",

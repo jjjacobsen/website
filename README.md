@@ -6,6 +6,45 @@ A modern React portfolio website built with Vite, featuring both development and
 
 ### Prerequisites
 
+#### Node.js Installation
+
+This project requires Node.js. Install it using Homebrew:
+
+```bash
+# Install Node.js (includes npm)
+brew install node
+
+# Verify installation
+node --version
+npm --version
+```
+
+#### Package Management
+
+After installing Node.js, you can manage dependencies using npm:
+
+```bash
+# Install all dependencies
+npm install
+
+# Add a new dependency
+npm install <package-name>
+
+# Add a development dependency
+npm install --save-dev <package-name>
+
+# Update dependencies
+npm update
+
+# Check for security vulnerabilities
+npm audit
+
+# Fix security vulnerabilities automatically
+npm audit fix
+```
+
+**Important:** Always commit both `package.json` and `package-lock.json` when dependencies change. The `package-lock.json` file ensures consistent dependency versions across environments.
+
 #### Pre-commit Hooks Setup
 
 This project uses pre-commit hooks to ensure code quality and consistency.
@@ -34,7 +73,6 @@ The pre-commit hooks will automatically run on each commit and check for:
 - Dockerfile linting
 - Security issues (private keys)
 - File consistency (trailing whitespace, line endings)
-- Package vulnerabilities (npm audit)
 
 ### Quick Start (Recommended)
 
@@ -51,8 +89,8 @@ docker compose up dev
 ### Local Production Testing
 
 ```bash
-# Test production build locally
-docker compose up prod
+# Build and test production build locally
+docker compose up prod --build
 # Available at http://localhost:8080
 ```
 
@@ -65,6 +103,19 @@ docker run -p 80:80 portfolio:latest
 
 # Or explicitly target production
 docker build --target production -t portfolio:prod .
+```
+
+### Code Quality
+
+```bash
+# Run ESLint to check for code issues
+npm run lint
+
+# Run ESLint and automatically fix fixable issues
+npm run lint:fix
+
+# Run all pre-commit checks manually
+pre-commit run --all-files
 ```
 
 ## 🔧 Docker Architecture
@@ -83,6 +134,22 @@ This project uses **multi-stage Docker builds** with three targets:
 - **Volume Protection** - Container's `node_modules` preserved during development
 - **Production Ready** - Optimized Nginx serving for production
 
+### Docker Commands Reference
+
+```bash
+# Development
+docker compose up dev                    # Start dev server
+docker compose up dev --build          # Rebuild and start dev server
+
+# Production
+docker compose up prod --build         # Build and start production server
+docker compose down                     # Stop all services
+
+# Manual Docker builds
+docker build --target development .     # Build dev image only
+docker build --target production .      # Build production image only
+```
+
 ## 🛠 Technology Stack
 
 - **React 18** - UI framework
@@ -96,10 +163,73 @@ This project uses **multi-stage Docker builds** with three targets:
 
 ```
 website/
-├── src/                  # React source code
-├── Dockerfile            # Multi-stage Docker build
-├── docker-compose.yml    # Development/production services
-├── nginx.conf            # Nginx configuration
-├── vite.config.js        # Vite configuration
-└── package.json          # Dependencies and scripts
+├── src/                     # React source code
+│   ├── components/          # React components
+│   ├── App.jsx             # Main app component
+│   └── main.jsx            # Entry point
+├── public/                  # Static assets
+├── Dockerfile              # Multi-stage Docker build
+├── docker-compose.yml      # Development/production services
+├── nginx.conf              # Nginx configuration
+├── vite.config.js          # Vite configuration
+├── package.json            # Dependencies and scripts
+├── package-lock.json       # Locked dependency versions
+├── eslint.config.js        # ESLint configuration
+└── .pre-commit-config.yaml # Code quality hooks
+```
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+**Port already in use:**
+
+```bash
+# Check what's using the port
+lsof -i :3000
+
+# Kill the process
+kill -9 <PID>
+```
+
+**Docker build issues:**
+
+```bash
+# Clean Docker cache
+docker system prune -a
+
+# Rebuild without cache
+docker compose up --build --force-recreate
+```
+
+**npm installation issues:**
+
+```bash
+# Clear npm cache
+npm cache clean --force
+
+# Delete node_modules and reinstall
+rm -rf node_modules package-lock.json
+npm install
+```
+
+**Pre-commit hooks not running:**
+
+```bash
+# Reinstall hooks
+pre-commit clean
+pre-commit install
+```
+
+**ESLint issues:**
+
+```bash
+# Check ESLint configuration
+npx eslint --print-config src/App.jsx
+
+# Run ESLint on specific file
+npx eslint src/App.jsx
+
+# Fix auto-fixable ESLint issues
+npm run lint:fix
 ```
