@@ -24,18 +24,14 @@ repos:
         exclude: ^package-lock\.json$
 
   # ESLint for JavaScript/React linting
-  - repo: https://github.com/pre-commit/mirrors-eslint
-    rev: v9.32.0
+  - repo: local
     hooks:
       - id: eslint
+        name: ESLint
+        entry: npm run lint
+        language: system
         files: \.(js|jsx)$
-        types: [file]
-        additional_dependencies:
-          - eslint@^9.32.0
-          - eslint-plugin-react@^7.37.5
-          - eslint-plugin-react-hooks@^5.2.0
-          - eslint-plugin-react-refresh@^0.4.20
-          - "@eslint/js@^9.32.0"
+        pass_filenames: false
 
   # Check package.json dependencies for security vulnerabilities
   - repo: local
