@@ -91,8 +91,9 @@ The pre-commit hooks will automatically run on each commit and check for:
 - JavaScript/React linting (ESLint)
 - JSON/YAML validation
 - Dockerfile linting
-- Security issues (private keys)
 - File consistency (trailing whitespace, line endings)
+- Security issues (private keys, merge conflicts)
+- Large file detection
 
 ### Quick Start (Recommended)
 
@@ -148,11 +149,11 @@ pre-commit run --all-files
 
 ## 🔧 Docker Architecture
 
-This project uses **multi-stage Docker builds** with three targets:
+This project uses **multi-stage Docker builds** with three stages:
 
-- **`build`**: Compiles the React app for production
-- **`development`**: Runs Vite dev server with hot reload
-- **`production`**: Serves built app with Nginx
+- **`build`**: Compiles the React app for production using Vite
+- **`development`**: Runs Vite dev server with hot reload for development
+- **`production`**: Serves built app with optimized Nginx configuration
 
 ### Key Features
 
@@ -182,14 +183,15 @@ docker build --target production .       # Build production image only
 
 ## 🛠 Technology Stack
 
-- **React 18** - UI framework with hooks and modern patterns
-- **Vite 7** - Fast build tool and development server with HMR
-- **Framer Motion** - Smooth animations and page transitions
-- **React Icons** - Comprehensive icon library (Font Awesome, Simple Icons)
+- **React 18.2** - UI framework with hooks and modern patterns
+- **Vite 7.0** - Fast build tool and development server with HMR
+- **Framer Motion 10.16** - Smooth animations and page transitions
+- **React Icons 4.12** - Comprehensive icon library (Font Awesome, Simple Icons)
 - **Docker** - Multi-stage containerization for development and production
-- **Nginx** - High-performance production web server with caching
-- **ESLint 9** - Code linting with React-specific rules
+- **Nginx Alpine** - High-performance production web server with caching
+- **ESLint 9.32** - Code linting with React-specific rules
 - **Prettier** - Code formatting via pre-commit hooks
+- **Node.js 18 Alpine** - Runtime environment for development and build
 
 ## 📁 Project Structure
 
@@ -207,7 +209,9 @@ website/
 │   ├── index.css                    # Global base styles
 │   └── main.jsx                     # Application entry point
 ├── public/                          # Static assets
-│   └── jonah_jacobsen_resume.pdf    # Downloadable resume
+│   ├── jonah_jacobsen_resume.pdf    # Downloadable resume
+│   ├── robots.txt                   # Search engine directives
+│   └── sitemap.xml                  # Site structure for SEO
 ├── Dockerfile                       # Multi-stage Docker build
 ├── docker-compose.yml               # Development/production services
 ├── nginx.conf                       # Nginx configuration with PDF handling
