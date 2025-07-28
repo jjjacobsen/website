@@ -1,6 +1,26 @@
-# Portfolio Website
+# Jonah Jacobsen - Portfolio Website
 
-A modern React portfolio website built with Vite, featuring both development and production Docker workflows.
+A modern, responsive personal portfolio website showcasing technical skills, professional projects, and contact information. Built with React and Vite, featuring smooth animations and both development and production Docker workflows.
+
+## ✨ Portfolio Features
+
+- **Hero Section** - Introduction with social media links (GitHub, LinkedIn, Email)
+- **About Section** - Professional background and technical skills showcase
+- **Projects Portfolio** - Detailed project descriptions with technologies used
+- **Contact Information** - Direct contact links and professional information
+- **Resume Download** - PDF resume available for download
+- **Smooth Animations** - Framer Motion animations for enhanced user experience
+- **Responsive Design** - Optimized for all device sizes
+- **Modern UI** - Clean, professional design with gradient effects
+
+## 🎯 Portfolio Content
+
+This portfolio showcases:
+
+- **Technical Skills**: AI/ML, Python, CI/CD, Docker, Kubernetes, Terraform, Django, AWS
+- **Professional Projects**: Including automated CI/CD pipelines, machine learning implementations, and cloud infrastructure
+- **Contact Information**: Professional social media and email contact options
+- **Downloadable Resume**: PDF resume accessible at `/jonah_jacobsen_resume.pdf`
 
 ## 🚀 Development Workflow
 
@@ -105,6 +125,14 @@ docker run -p 80:80 portfolio:latest
 docker build --target production -t portfolio:prod .
 ```
 
+### Accessing Portfolio Content
+
+Once running, the portfolio will be available with the following endpoints:
+
+- **Main Portfolio**: `http://localhost:3000` (dev) or `http://localhost:8080` (prod)
+- **Resume Download**: `http://localhost:3000/jonah_jacobsen_resume.pdf`
+- **All Portfolio Sections**: Accessible via smooth scrolling navigation
+
 ### Code Quality
 
 ```bash
@@ -132,50 +160,62 @@ This project uses **multi-stage Docker builds** with three targets:
 - **Hot Reload** - Vite development server with instant feedback
 - **Bind Mounts** - Local code changes reflected immediately in container
 - **Volume Protection** - Container's `node_modules` preserved during development
-- **Production Ready** - Optimized Nginx serving for production
+- **Production Ready** - Optimized Nginx serving with gzip compression and static asset caching
+- **Resume Serving** - Dedicated PDF handling with proper MIME types and inline display
+- **SPA Routing** - Proper fallback handling for single-page application routes
 
 ### Docker Commands Reference
 
 ```bash
 # Development
 docker compose up dev                    # Start dev server
-docker compose up dev --build          # Rebuild and start dev server
+docker compose up dev --build            # Rebuild and start dev server
 
 # Production
-docker compose up prod --build         # Build and start production server
-docker compose down                     # Stop all services
+docker compose up prod --build           # Build and start production server
+docker compose down                      # Stop all services
 
 # Manual Docker builds
-docker build --target development .     # Build dev image only
-docker build --target production .      # Build production image only
+docker build --target development .      # Build dev image only
+docker build --target production .       # Build production image only
 ```
 
 ## 🛠 Technology Stack
 
-- **React 18** - UI framework
-- **Vite 5** - Build tool and dev server
-- **Framer Motion** - Animations
-- **React Icons** - Icon library
-- **Docker** - Containerization
-- **Nginx** - Production web server
+- **React 18** - UI framework with hooks and modern patterns
+- **Vite 7** - Fast build tool and development server with HMR
+- **Framer Motion** - Smooth animations and page transitions
+- **React Icons** - Comprehensive icon library (Font Awesome, Simple Icons)
+- **Docker** - Multi-stage containerization for development and production
+- **Nginx** - High-performance production web server with caching
+- **ESLint 9** - Code linting with React-specific rules
+- **Prettier** - Code formatting via pre-commit hooks
 
 ## 📁 Project Structure
 
 ```
 website/
-├── src/                     # React source code
-│   ├── components/          # React components
-│   ├── App.jsx             # Main app component
-│   └── main.jsx            # Entry point
-├── public/                  # Static assets
-├── Dockerfile              # Multi-stage Docker build
-├── docker-compose.yml      # Development/production services
-├── nginx.conf              # Nginx configuration
-├── vite.config.js          # Vite configuration
-├── package.json            # Dependencies and scripts
-├── package-lock.json       # Locked dependency versions
-├── eslint.config.js        # ESLint configuration
-└── .pre-commit-config.yaml # Code quality hooks
+├── src/                             # React source code
+│   ├── components/                  # React components
+│   │   ├── Hero.jsx                 # Landing section with intro
+│   │   ├── About.jsx                # Skills and background
+│   │   ├── Projects.jsx             # Portfolio projects
+│   │   ├── Contact.jsx              # Contact information
+│   │   └── *.css                    # Component-specific styles
+│   ├── App.jsx                      # Main app component
+│   ├── App.css                      # Global app styles
+│   ├── index.css                    # Global base styles
+│   └── main.jsx                     # Application entry point
+├── public/                          # Static assets
+│   └── jonah_jacobsen_resume.pdf    # Downloadable resume
+├── Dockerfile                       # Multi-stage Docker build
+├── docker-compose.yml               # Development/production services
+├── nginx.conf                       # Nginx configuration with PDF handling
+├── vite.config.js                   # Vite configuration
+├── package.json                     # Dependencies and scripts
+├── package-lock.json                # Locked dependency versions
+├── eslint.config.js                 # ESLint configuration (flat config)
+└── .pre-commit-config.yaml          # Code quality hooks and automation
 ```
 
 ## 🐛 Troubleshooting
