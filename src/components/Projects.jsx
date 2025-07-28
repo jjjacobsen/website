@@ -33,13 +33,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="projects">
-      <motion.div
-        className="projects-content container"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
+      <div className="projects-content container">
         <h2 className="section-title">Featured Projects</h2>
 
         <div className="projects-grid">
@@ -47,10 +41,6 @@ const Projects = () => {
             <motion.div
               key={index}
               className="project-card"
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
               whileHover={{ y: -5 }}
             >
               <div className="project-header">
@@ -81,7 +71,7 @@ const Projects = () => {
             </motion.div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };
