@@ -147,6 +147,60 @@ npm run lint:fix
 pre-commit run --all-files
 ```
 
+### 🧪 Testing
+
+This project includes comprehensive unit tests for all React components using **Vitest** and **React Testing Library**.
+
+#### Running Tests
+
+```bash
+# Run tests using the invoke task
+inv test
+```
+
+#### Test Coverage
+
+The test suite covers:
+
+- **Component Rendering**: Ensures all components render without errors
+- **Content Validation**: Verifies correct text, links, and data display
+- **User Interface**: Tests buttons, links, and interactive elements
+- **Layout Structure**: Validates proper CSS classes and DOM structure
+- **Social Links**: Ensures correct URLs for GitHub, LinkedIn, and email
+- **Resume Download**: Tests resume link functionality
+
+#### Test Files
+
+- `src/__tests__/App.test.jsx` - Main app component tests
+- `src/__tests__/Hero.test.jsx` - Hero section component tests
+- `src/__tests__/About.test.jsx` - About section component tests
+- `src/__tests__/Projects.test.jsx` - Projects section component tests
+- `src/__tests__/Contact.test.jsx` - Contact section component tests
+
+#### Automated Testing in Deployment
+
+**Important**: Quality checks and tests are automatically run as part of the build process. The `inv build-and-push` task will:
+
+1. **🔍 Run pre-commit hooks** - Code quality, formatting, linting, security checks
+2. **🧪 Run all unit tests** - React component tests must pass
+3. **🔨 Build Docker image** - Only proceeds if above steps pass
+4. **📤 Push to ECR** - Only pushes if build succeeds
+
+This ensures that broken or poorly formatted code is never deployed to production.
+
+#### Available Invoke Tasks
+
+```bash
+# Run individual tasks
+inv test                # Run unit tests only
+inv precommit          # Run pre-commit hooks only
+inv build-and-push     # Full deployment pipeline (precommit → test → build → push)
+
+# View task details
+inv --list             # List all available tasks
+inv <task-name> --help # Get detailed help for a specific task
+```
+
 ## 🚀 ECR Deployment (AWS)
 
 This project includes Python invoke tasks for building and pushing containers to Amazon ECR.

@@ -59,6 +59,21 @@ export default [
     },
   },
   {
+    // Test files configuration
+    files: ["**/*.test.{js,jsx}", "**/test/**/*.{js,jsx}"],
+    languageOptions: {
+      globals: {
+        describe: "readonly",
+        it: "readonly",
+        expect: "readonly",
+        beforeEach: "readonly",
+        afterEach: "readonly",
+        vi: "readonly",
+        global: "readonly",
+      },
+    },
+  },
+  {
     // Ignore specific files
     ignores: ["dist/", "node_modules/", "*.config.js"],
   },

@@ -3,16 +3,78 @@ import sys
 
 
 @task
+def test(c):
+    """
+    Run the React component unit tests using Vitest.
+
+    This task:
+    1. Runs all unit tests for React components
+    2. Shows test coverage and results
+    3. Exits with error code if tests fail
+
+    Prerequisites:
+    - Node.js and npm must be installed
+    - Test dependencies must be installed (npm install)
+    """
+
+    print("🧪 Running React component tests...")
+
+    # Run the tests
+    test_result = c.run("npm run test:run", pty=True)
+
+    if test_result.exited != 0:
+        print("❌ Tests failed!")
+        sys.exit(1)
+
+    print("✅ All tests passed!")
+
+
+@task
+def precommit(c):
+    """
+    Run pre-commit hooks on all files to ensure code quality.
+
+    This task:
+    1. Runs all configured pre-commit hooks
+    2. Checks code formatting (Prettier)
+    3. Validates JavaScript/React code (ESLint)
+    4. Checks for security issues and file consistency
+    5. Lints Dockerfiles
+
+    Prerequisites:
+    - pre-commit must be installed (pipx install pre-commit)
+    - pre-commit hooks must be installed (pre-commit install)
+    """
+
+    print("🔍 Running pre-commit hooks...")
+
+    # Run pre-commit on all files
+    precommit_result = c.run("pre-commit run --all-files", pty=True)
+
+    if precommit_result.exited != 0:
+        print("❌ Pre-commit checks failed!")
+        sys.exit(1)
+
+    print("✅ All pre-commit checks passed!")
+
+
+@task(pre=[precommit, test])
 def build_and_push(c):
     """
     Build the Docker container for x86 architecture and push to Amazon ECR.
 
-    This task:
-    1. Builds the Docker image targeting the production stage for x86 architecture
-    2. Tags it with the ECR repository URL
-    3. Pushes it to Amazon ECR
+    This task automatically runs pre-commit checks and tests before building.
+
+    Execution order:
+    1. Pre-commit hooks (code quality, formatting, linting)
+    2. Unit tests (all React component tests)
+    3. Docker build (only if above steps pass)
+    4. Push to ECR (only if build succeeds)
 
     Prerequisites:
+    - Node.js and npm must be installed
+    - Test dependencies must be installed (npm install)
+    - pre-commit must be installed and configured
     - Docker must be installed and running
     - AWS CLI must be configured with appropriate ECR permissions
     - You must be logged into ECR (run: aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 475365909498.dkr.ecr.us-east-2.amazonaws.com)
