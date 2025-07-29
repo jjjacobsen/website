@@ -147,6 +147,38 @@ npm run lint:fix
 pre-commit run --all-files
 ```
 
+## 🚀 ECR Deployment (AWS)
+
+This project includes Python invoke tasks for building and pushing containers to Amazon ECR.
+
+### Prerequisites for ECR Deployment
+
+```bash
+# Install invoke
+pipx install invoke
+
+# Install and configure AWS CLI (if not already done)
+brew install awscli
+aws configure
+```
+
+### ECR Deployment Commands
+
+```bash
+# Login to Amazon ECR (run this first or when authentication expires)
+aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 475365909498.dkr.ecr.us-east-2.amazonaws.com
+
+# Build for x86 architecture and push to ECR
+inv build-and-push
+```
+
+The `build-and-push` task will:
+
+- Build the Docker image for x86 architecture (`linux/amd64`)
+- Target the production stage from the multi-stage Dockerfile
+- Tag it with your ECR repository URL: `475365909498.dkr.ecr.us-east-2.amazonaws.com/website:latest`
+- Push the image to Amazon ECR
+
 ## 🔧 Docker Architecture
 
 This project uses **multi-stage Docker builds** with three stages:
