@@ -58,6 +58,46 @@ def precommit(c):
     print("✅ All pre-commit checks passed!")
 
 
+@task
+def dev(c):
+    """
+    Start the development server using Docker Compose.
+
+    This task:
+    1. Rebuilds the development Docker container
+    2. Starts the development server with hot reloading
+    3. Runs in the foreground with live logs
+
+    Prerequisites:
+    - Docker and Docker Compose must be installed and running
+    """
+
+    print("🚀 Starting development server with Docker Compose...")
+
+    # Start development server with rebuild
+    c.run("docker compose up dev --build", pty=True)
+
+
+@task
+def prod(c):
+    """
+    Start the production server using Docker Compose.
+
+    This task:
+    1. Builds the production Docker container
+    2. Starts the production server with optimized assets
+    3. Runs in the foreground with live logs
+
+    Prerequisites:
+    - Docker and Docker Compose must be installed and running
+    """
+
+    print("🏭 Starting production server with Docker Compose...")
+
+    # Start production server with rebuild
+    c.run("docker compose up prod --build", pty=True)
+
+
 @task(pre=[precommit, test])
 def build_and_push(c):
     """

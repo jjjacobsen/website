@@ -98,7 +98,10 @@ The pre-commit hooks will automatically run on each commit and check for:
 ### Quick Start (Recommended)
 
 ```bash
-# Start development server with hot reload
+# Start development server with hot reload (using invoke task)
+inv dev
+
+# Or use Docker Compose directly
 docker compose up dev
 
 # Your app will be available at http://localhost:3000
@@ -110,7 +113,10 @@ docker compose up dev
 ### Local Production Testing
 
 ```bash
-# Build and test production build locally
+# Build and test production build locally (using invoke task)
+inv prod
+
+# Or use Docker Compose directly
 docker compose up prod --build
 # Available at http://localhost:8080
 ```
@@ -191,8 +197,12 @@ This ensures that broken or poorly formatted code is never deployed to productio
 #### Available Invoke Tasks
 
 ```bash
-# Run individual tasks
-inv test                # Run unit tests only
+# Development and production servers
+inv dev                # Start development server (docker compose up dev --build)
+inv prod               # Start production server (docker compose up prod --build)
+
+# Quality assurance and testing
+inv test               # Run unit tests only
 inv precommit          # Run pre-commit hooks only
 inv build-and-push     # Full deployment pipeline (precommit → test → build → push)
 
@@ -254,11 +264,13 @@ This project uses **multi-stage Docker builds** with three stages:
 ### Docker Commands Reference
 
 ```bash
-# Development
+# Recommended: Using invoke tasks
+inv dev                                  # Start dev server (rebuilds automatically)
+inv prod                                 # Start production server (rebuilds automatically)
+
+# Direct Docker Compose commands
 docker compose up dev                    # Start dev server
 docker compose up dev --build            # Rebuild and start dev server
-
-# Production
 docker compose up prod --build           # Build and start production server
 docker compose down                      # Stop all services
 
