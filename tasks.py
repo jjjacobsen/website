@@ -108,8 +108,9 @@ def build_and_push(c):
     Execution order:
     1. Pre-commit hooks (code quality, formatting, linting)
     2. Unit tests (all React component tests)
-    3. Docker build (only if above steps pass)
-    4. Push to ECR (only if build succeeds)
+    3. ECR authentication (automatic)
+    4. Docker build (only if above steps pass)
+    5. Push to ECR (only if build succeeds)
 
     Prerequisites:
     - Node.js and npm must be installed
@@ -117,11 +118,24 @@ def build_and_push(c):
     - pre-commit must be installed and configured
     - Docker must be installed and running
     - AWS CLI must be configured with appropriate ECR permissions
-    - You must be logged into ECR (run: aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 475365909498.dkr.ecr.us-east-2.amazonaws.com)
     """
 
     ecr_url = "475365909498.dkr.ecr.us-east-2.amazonaws.com/website:latest"
+    ecr_registry = "475365909498.dkr.ecr.us-east-2.amazonaws.com"
+    aws_region = "us-east-2"
 
+    # Authenticate with ECR before building and pushing
+    print("🔐 Authenticating with Amazon ECR...")
+    login_result = c.run(
+        f"aws ecr get-login-password --region {aws_region} | docker login --username AWS --password-stdin {ecr_registry}",
+        pty=True
+    )
+
+    if login_result.exited != 0:
+        print("❌ ECR authentication failed!")
+        sys.exit(1)
+
+    print("✅ ECR authentication successful!")
     print("🔨 Building Docker image for x86 architecture...")
 
     # Build the image for x86 architecture targeting production stage
