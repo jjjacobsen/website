@@ -121,6 +121,11 @@
     padding: 1.25rem;
   }
 
+  .contact-method:last-child:nth-child(odd) {
+    width: 100%;
+    grid-column: unset;
+  }
+
   .contact-intro {
     font-size: 1rem;
     margin-bottom: 2rem;
