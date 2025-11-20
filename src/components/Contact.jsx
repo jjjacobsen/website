@@ -71,10 +71,6 @@ const Contact = () => {
           ))}
         </motion.div>
       </motion.div>
-
-      <footer className="footer">
-        <p>© 2025 Jonah Jacobsen. Built with React</p>
-      </footer>
     </section>
   );
 };

@@ -94,23 +94,6 @@
   hyphens: none;
 }
 
-.contact-cta {
-  margin-top: 2rem;
-}
-
-.footer {
-  background: var(--bg-secondary);
-  padding: 2rem 0;
-  text-align: center;
-  margin-top: 100px;
-  border-top: 1px solid var(--border-color);
-}
-
-.footer p {
-  color: var(--text-tertiary);
-  font-size: 0.875rem;
-}
-
 @media (max-width: 768px) {
   .contact-methods {
     grid-template-columns: 1fr;
