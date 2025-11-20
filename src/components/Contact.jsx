@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaEnvelope, FaGithub } from "react-icons/fa";
 import "./Contact.css";
 
 const Contact = () => {
@@ -9,12 +9,6 @@ const Contact = () => {
       label: "GitHub",
       value: "github.com/jjjacobsen",
       href: "https://github.com/jjjacobsen",
-    },
-    {
-      icon: <FaLinkedin />,
-      label: "LinkedIn",
-      value: "linkedin.com/in/jonahjacobsen",
-      href: "https://www.linkedin.com/in/jonahjacobsen/",
     },
     {
       icon: <FaEnvelope />,

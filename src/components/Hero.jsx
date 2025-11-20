@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaEnvelope } from "react-icons/fa";
 import "./Hero.css";
 
 const Hero = () => {
@@ -8,11 +8,6 @@ const Hero = () => {
       icon: <FaGithub />,
       href: "https://github.com/jjjacobsen",
       label: "GitHub",
-    },
-    {
-      icon: <FaLinkedin />,
-      href: "https://www.linkedin.com/in/jonahjacobsen/",
-      label: "LinkedIn",
     },
     {
       icon: <FaEnvelope />,
