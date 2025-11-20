@@ -1,0 +1,9 @@
+[tasks]
+prod = { run = [
+  "docker build -t website .",
+  "docker run --rm --name website -d -p 8080:80 website",
+], description = "Start docker container" }
+
+stop = { run = [
+  "docker stop website",
+], description = "Stop docker container" }
