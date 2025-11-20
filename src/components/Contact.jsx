@@ -76,22 +76,6 @@ const Contact = () => {
             </motion.a>
           ))}
         </motion.div>
-
-        <motion.div
-          className="contact-cta"
-          initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <a
-            href="/jonah_jacobsen_resume.pdf"
-            download="jonah_jacobsen_resume.pdf"
-            className="btn btn-primary"
-          >
-            Download Resume
-          </a>
-        </motion.div>
       </motion.div>
 
       <footer className="footer">

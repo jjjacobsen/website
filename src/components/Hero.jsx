@@ -63,15 +63,7 @@ const Hero = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <a
-            href="/jonah_jacobsen_resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary"
-          >
-            <span>View Resume</span>
-          </a>
-          <a href="#projects" className="btn btn-secondary">
+          <a href="#projects" className="btn btn-primary">
             <span>View Projects</span>
           </a>
         </motion.div>
