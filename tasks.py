@@ -3,22 +3,6 @@ import sys
 
 
 @task
-def precommit(c):
-    """Run pre-commit hooks on all files."""
-
-    print("🔍 Running pre-commit hooks...")
-
-    # Run pre-commit on all files
-    precommit_result = c.run("pre-commit run --all-files", pty=True)
-
-    if precommit_result.exited != 0:
-        print("❌ Pre-commit checks failed!")
-        sys.exit(1)
-
-    print("✅ All pre-commit checks passed!")
-
-
-@task
 def dev(c):
     """Start the development server using Docker Compose."""
 
