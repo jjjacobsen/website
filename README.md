@@ -8,15 +8,17 @@ A modern, responsive personal portfolio website showcasing technical skills, pro
 
 TODO: FIX THIS TO USE MISE INSTEAD OF BREW
 
-This project requires Node.js. Install it using Homebrew:
+This project requires Node.js. Install it using mise:
 
 ```bash
 # Install Node.js (includes npm)
-brew install node
+mise install
 
 # Verify installation
 node --version
 npm --version
+which node
+mise ls
 ```
 
 ### Package Management
