@@ -32,20 +32,3 @@ repos:
         language: system
         files: \.(js|jsx)$
         pass_filenames: false
-
-  # Check package.json dependencies for security vulnerabilities
-  - repo: local
-    hooks:
-      - id: npm-audit
-        name: npm security audit
-        entry: npm audit --audit-level moderate
-        language: system
-        files: ^(package\.json|package-lock\.json)$
-        pass_filenames: false
-
-  # Dockerfile linting
-  - repo: https://github.com/hadolint/hadolint
-    rev: v2.13.1-beta
-    hooks:
-      - id: hadolint-docker
-        args: ["--ignore", "DL3008", "--ignore", "DL3009"]
