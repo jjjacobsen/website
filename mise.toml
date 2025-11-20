@@ -2,11 +2,24 @@
 node = "25.2"
 
 [tasks]
+start = { run = [
+  "if tmux has-session -t website 2>/dev/null; then echo \"tmux session website already running\"; exit 1; fi",
+  "tmux new-session -d -s website -n dev-server -c .",
+  "tmux send-keys -t website:dev-server \"npm run dev\" C-m",
+  "echo 'Dev server running in tmux session website. Attach with: mise attach'",
+], description = "Start development server in background" }
+
+stop = { run = [
+  "docker stop website 2>/dev/null || echo 'Prod container not running'",
+  "tmux kill-session -t website 2>/dev/null || echo \"tmux session website not found\"",
+  "echo 'All website services stopped'",
+], description = "Stop all website services" }
+
+attach = { run = [
+  "tmux attach -t website",
+], description = "Attach to tmux session" }
+
 prod = { run = [
   "docker build -t website .",
   "docker run --rm --name website -d -p 8080:80 website",
 ], description = "Start docker container" }
-
-stop = { run = [
-  "docker stop website",
-], description = "Stop docker container" }
