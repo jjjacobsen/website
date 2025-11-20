@@ -5,9 +5,25 @@ import "./Projects.css";
 const Projects = () => {
   const projects = [
     {
+      title: "Survivor Pool",
+      description:
+        "Mobile and web application for challenge pools based on the TV show Survivor.",
+      tech: ["Flutter", "FastAPI", "Docker", "Mise", "uv", "MongoDB"],
+      github: "https://github.com/jjjacobsen/survivor-pool",
+      live: null,
+    },
+    {
+      title: "Home Lab",
+      description:
+        "Self-hosted infrastructure to serve projects and gain experience managing hardware. And also because it's awesome.",
+      tech: ["Raspberry Pi", "Caddy", "Nginx", "Cloudflare", "Linux", "Docker"],
+      github: null,
+      live: null,
+    },
+    {
       title: "Automated CI/CD Pipeline",
       description:
-        "Architected and built a complete CI/CD pipeline from the ground up, reducing release cycles from 9-11 months to daily deployments and saving millions annually.",
+        "Architected and built a complete CI/CD pipeline from the ground up. Reduced release cycle from 9-11 months to daily deployments.",
       tech: [
         "Python",
         "Docker",
@@ -33,7 +49,7 @@ const Projects = () => {
   return (
     <section id="projects" className="projects">
       <div className="projects-content container">
-        <h2 className="section-title">Featured Projects</h2>
+        <h2 className="section-title">Projects</h2>
 
         <div className="projects-grid">
           {projects.map((project, index) => (
@@ -46,12 +62,22 @@ const Projects = () => {
                 <h3>{project.title}</h3>
                 <div className="project-links">
                   {project.github && (
-                    <a href={project.github} aria-label="GitHub">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="GitHub"
+                    >
                       <FaGithub />
                     </a>
                   )}
                   {project.live && (
-                    <a href={project.live} aria-label="Live Demo">
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Live Demo"
+                    >
                       <FaExternalLinkAlt />
                     </a>
                   )}
