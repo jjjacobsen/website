@@ -43,7 +43,7 @@
 .gradient-orb-2 {
   width: 400px;
   height: 400px;
-  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  background: linear-gradient(135deg, #f59e0b 0%, #fcd34d 100%);
   bottom: -200px;
   left: -200px;
   animation-delay: 5s;
@@ -52,7 +52,7 @@
 .gradient-orb-3 {
   width: 500px;
   height: 500px;
-  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  background: linear-gradient(135deg, #22c55e 0%, #b45309 100%);
   top: 50%;
   left: 50%;
   animation: float-centered 20s infinite ease-in-out;
