@@ -101,7 +101,7 @@ const About = () => {
                   className="skill-item"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
-                  transition={{ duration: 0.3, delay: 0.05 * index }}
+                  transition={{ duration: 0.2, delay: 0.02 * index }}
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05, rotate: 5 }}
                 >
@@ -128,7 +128,7 @@ const About = () => {
                   className="skill-item"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
-                  transition={{ duration: 0.3, delay: 0.05 * index }}
+                  transition={{ duration: 0.2, delay: 0.02 * index }}
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05, rotate: 5 }}
                 >
