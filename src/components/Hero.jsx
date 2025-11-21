@@ -39,7 +39,7 @@ const Hero = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Senior Software Engineer • AI/ML Specialist • DevOps Innovator
+          Software Writer • AI Enjoyer
         </motion.p>
 
         <motion.p
@@ -48,8 +48,8 @@ const Hero = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          Building the future with AI and automation. Love creating tools that
-          make developers&apos; lives easier and businesses more efficient.
+          I love building things with code! Check out some of the stuff I’ve
+          built
         </motion.p>
 
         <motion.div
