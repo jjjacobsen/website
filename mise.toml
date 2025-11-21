@@ -23,3 +23,7 @@ prod = { run = [
   "docker build -t website .",
   "docker run --rm --name website -d -p 8080:80 website",
 ], description = "Start docker container" }
+
+build = { run = [
+  "docker build --pull --no-cache -t website .",
+], description = "Build container cleanly" }
