@@ -1,0 +1,12 @@
+.cross {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.cross-icon {
+  font-size: clamp(5rem, 13vw, 11rem);
+  color: var(--accent-primary);
+}
