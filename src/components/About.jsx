@@ -3,14 +3,11 @@ import {
   FaPython,
   FaDocker,
   FaLinux,
-  FaBrain,
-  FaCogs,
   FaReact,
   FaAws,
   FaGithub,
   FaApple,
   FaGitAlt,
-  FaQuestionCircle,
   FaJava,
 } from "react-icons/fa";
 import {

@@ -32,7 +32,15 @@ repos:
     hooks:
       - id: eslint
         files: \.(js|jsx)$
-        args: ["--ext", ".js,.jsx", "src"]
+        args:
+          [
+            "--ext",
+            ".js,.jsx",
+            "--max-warnings",
+            "0",
+            "--no-warn-ignored",
+            "src",
+          ]
         additional_dependencies:
           - "eslint@9.32.0"
           - "@eslint/js@9.32.0"
