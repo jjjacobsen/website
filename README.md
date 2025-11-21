@@ -6,8 +6,6 @@ A modern, responsive personal portfolio website showcasing technical skills, pro
 
 ### Installation
 
-TODO: FIX THIS TO USE MISE INSTEAD OF BREW
-
 This project requires Node.js. Install it using mise:
 
 ```bash
