@@ -33,9 +33,9 @@ import {
   SiDart,
   SiOpenai,
 } from "react-icons/si";
-import "./About.css";
+import "./Skills.css";
 
-const About = () => {
+const Skills = () => {
   const skills = [
     { name: "Docker", icon: <FaDocker /> },
     { name: "Codex", icon: <SiOpenai /> },
@@ -141,4 +141,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Skills;

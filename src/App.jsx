@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Hero from "./components/Hero";
-import About from "./components/About";
+import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Cross from "./components/Cross";
 import "./App.css";
@@ -15,7 +15,7 @@ function App() {
         className="container"
       >
         <Hero />
-        <About />
+        <Skills />
         <Projects />
         <Cross />
       </motion.div>
