@@ -31,6 +31,7 @@ import {
   SiC,
   SiCplusplus,
   SiDart,
+  SiLua,
   SiOpenai,
 } from "react-icons/si";
 import "./Skills.css";
@@ -69,6 +70,7 @@ const Skills = () => {
     { name: "C", icon: <SiC /> },
     { name: "C++", icon: <SiCplusplus /> },
     { name: "Dart", icon: <SiDart /> },
+    { name: "Lua", icon: <SiLua /> },
     { name: "Java", icon: <FaJava /> },
   ];
 
