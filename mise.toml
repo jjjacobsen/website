@@ -2,7 +2,7 @@
 node = "25.2"
 
 [tasks]
-start = { run = [
+dev = { run = [
   "if tmux has-session -t website 2>/dev/null; then echo \"tmux session website already running\"; exit 1; fi",
   "tmux new-session -d -s website -n dev-server -c .",
   "tmux send-keys -t website:dev-server \"npm run dev\" C-m",
