@@ -10,7 +10,7 @@ const Projects = () => {
         "Mobile and web application for challenge pools based on the TV show Survivor.",
       tech: ["Flutter", "FastAPI", "Docker", "Mise", "uv", "MongoDB"],
       github: "https://github.com/jjjacobsen/survivor-pool",
-      live: null,
+      live: "https://survivorpoolapp.com",
     },
     {
       title: "Home Lab",
