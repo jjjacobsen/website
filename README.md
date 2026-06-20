@@ -1,6 +1,6 @@
 # Jonah Jacobsen - Portfolio Website
 
-A modern, responsive personal portfolio website showcasing technical skills, professional projects, and contact information. Built with React and Vite, featuring smooth animations and both development and production workflows.
+A modern, responsive personal portfolio website showcasing technical skills, professional projects, and contact information. Built with React and Vite, featuring smooth animations and a local development workflow.
 
 ## 🚀 Development Workflow
 
@@ -56,17 +56,26 @@ npm run lint:fix
 pre-commit run -a
 ```
 
+## Deployment
+
+This site is deployed with Cloudflare Pages.
+
+Cloudflare Pages build settings:
+
+```text
+Build command: npm run build
+Build output directory: dist
+```
+
 ## 🛠 Technology Stack
 
 - **React** - UI framework with hooks and modern patterns
 - **Vite** - Fast build tool and development server with HMR
 - **Framer Motion** - Smooth animations and page transitions
 - **React Icons** - Comprehensive icon library (Font Awesome, Simple Icons)
-- **Docker** - Multi-stage containerization for development and production
-- **Nginx Alpine** - High-performance production web server with caching
 - **ESLint** - Code linting with React-specific rules
 - **Prettier** - Code formatting via pre-commit hooks
-- **Node.js** - Runtime environment for prod
+- **Node.js** - Local tooling runtime
 
 ## 🐛 Troubleshooting
 

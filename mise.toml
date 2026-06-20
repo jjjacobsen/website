@@ -10,20 +10,6 @@ dev = { run = [
 ], description = "Start development server in background" }
 
 stop = { run = [
-  "docker stop website 2>/dev/null || echo 'Prod container not running'",
   "tmux kill-session -t website 2>/dev/null || echo \"tmux session website not found\"",
-  "echo 'All website services stopped'",
-], description = "Stop all website services" }
-
-attach = { run = [
-  "tmux attach -t website",
-], description = "Attach to tmux session" }
-
-prod = { run = [
-  "docker build -t website .",
-  "docker run --rm --name website -d -p 8080:80 website",
-], description = "Start docker container" }
-
-build = { run = [
-  "docker build --pull --no-cache -t website .",
-], description = "Build container cleanly" }
+  "echo 'Dev server stopped'",
+], description = "Stop development server" }
