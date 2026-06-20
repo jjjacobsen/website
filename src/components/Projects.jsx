@@ -5,6 +5,13 @@ import "./Projects.css";
 const Projects = () => {
   const projects = [
     {
+      title: "Crowsnest",
+      description: "SaaS and API of road event data for safer roads",
+      tech: ["Flutter", "Vercel", "Supabase", "FastAPI", "WZDx"],
+      github: null,
+      live: "https://crowsnesttraffic.com/",
+    },
+    {
       title: "Survivor Pool",
       description:
         "Mobile and web application for challenge pools based on the TV show Survivor.",
