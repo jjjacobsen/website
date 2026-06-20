@@ -39,7 +39,7 @@ const Hero = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Vibecoder • Open Source Enjoyer
+          AI Enthusiast • Open Source Enjoyer
         </motion.p>
 
         <motion.p
