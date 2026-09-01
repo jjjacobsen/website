@@ -1,5 +1,14 @@
 [tools]
+gitleaks = "latest"
+hk = "1.55.0"
+jq = "latest"
 node = "25.2"
+prettier = "latest"
+taplo = "latest"
+typos = "latest"
+
+[env]
+HK_MISE = 1
 
 [tasks]
 dev = { run = [
