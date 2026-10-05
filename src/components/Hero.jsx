@@ -55,7 +55,7 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           I love building things with code! Check out some of the stuff
-          I&apos;ve built
+          I&apos;ve built hi
         </motion.p>
 
         <motion.div
